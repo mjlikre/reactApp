@@ -1,21 +1,16 @@
 import React, { Component } from 'react'
 import Characters from './Characters'
-import PropTypes from 'prop-types';
+
 
 class CharacterList extends Component {
     render() {
        return this.props.characters.map((character)=>(
-            <div className = 'row'>
-                <Characters character = {character} key = {character.id}/>
-
+            <div>
+                <Characters character = {character} key = {character.id} clicked = {this.props.clicked}/>
             </div>
         ));
         
     }
-}
- 
-CharacterList.propTypes = {
-    characters: PropTypes.array.isRequired
 }
 
 export default CharacterList;
